@@ -13,15 +13,27 @@ const Bestseller = () => {
 	const fetchData = () =>
 		client
 			.getEntries()
-			.then((response) => setData(response.items))
+			.then((response) => {
+				setData(response.items);
+				console.log(response.items);
+			})
 			.catch(console.error);
 
 	useEffect(() => {
 		fetchData();
 	}, []);
-	console.log(data);
-	// console.log(data.fields.name);
-	return <div>{data.fields.name}</div>;
+
+	return data.map((eachData) => (
+		<div key={eachData.sys.id}>
+			<img
+				className='h-20'
+				src={eachData.fields.heroImage.fields.file.url}
+				alt={eachData.fields.heroImage.fields.file.fileName}
+			/>
+			<p>{eachData.fields.name}</p>
+			<p>{eachData.fields.description}</p>
+		</div>
+	));
 };
 
 export default Bestseller;
