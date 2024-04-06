@@ -1,7 +1,9 @@
 import { createClient } from 'contentful';
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 // import axios from 'axios';
+// Ask Lillian how to put cards in flex
 
 const Bestseller = () => {
 	const [data, setData] = useState([]);
@@ -24,16 +26,46 @@ const Bestseller = () => {
 	}, []);
 
 	return data.map((eachData) => (
-		<div key={eachData.sys.id}>
-			<img
-				className='h-20'
-				src={eachData.fields.heroImage.fields.file.url}
-				alt={eachData.fields.heroImage.fields.file.fileName}
-			/>
-			<p>{eachData.fields.name}</p>
-			<p>{eachData.fields.description}</p>
-		</div>
+		<Link>
+			<div
+				key={eachData.sys.id}
+				className='card card-compact w-96 bg-base-100 shadow-xl'
+			>
+				<figure>
+					<img
+						className='h-30'
+						src={eachData.fields.heroImage.fields.file.url}
+						alt={eachData.fields.heroImage.fields.file.fileName}
+					/>
+				</figure>
+				<div className='card-body'>
+					<h2 className='card-title'>{eachData.fields.name}</h2>
+					<h3>
+						{eachData.fields.price} {''}EUR
+					</h3>
+				</div>
+			</div>
+		</Link>
 	));
 };
+
+{
+	/* <div className='card card-compact w-96 bg-base-100 shadow-xl'>
+	<figure>
+		<img
+			src='https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg'
+			alt='Shoes'
+		/>
+	</figure>
+	<div className='card-body'>
+		<h2 className='card-title'>Shoes!</h2>
+		<p>If a dog chews shoes whose shoes does he choose?</p>
+		<div className='card-actions justify-end'>
+			<button className='btn btn-primary'>Buy Now</button>
+		</div>
+	</div>
+</div>; */
+}
+
 
 export default Bestseller;
