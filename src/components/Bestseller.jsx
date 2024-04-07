@@ -25,47 +25,32 @@ const Bestseller = () => {
 		fetchData();
 	}, []);
 
-	return data.map((eachData) => (
-		<Link>
-			<div
+return (
+	<div className='flex flex-row space-x-4 overflow-x-auto m-2'>
+		{data.map((eachData) => (
+			<Link
 				key={eachData.sys.id}
 				className='card card-compact w-96 bg-base-100 shadow-xl'
 			>
-				<figure>
+				<div>
 					<img
 						className='h-30'
 						src={eachData.fields.heroImage.fields.file.url}
 						alt={eachData.fields.heroImage.fields.file.fileName}
 					/>
-				</figure>
-				<div className='card-body'>
-					<h2 className='card-title'>{eachData.fields.name}</h2>
-					<h3>
-						{eachData.fields.price} {''}EUR
-					</h3>
+					<div className='card-body'>
+						<h2 className='card-title'>{eachData.fields.name}</h2>
+						<h3>
+							{eachData.fields.price} {''}EUR
+						</h3>
+					</div>
 				</div>
-			</div>
-		</Link>
-	));
+			</Link>
+		))}
+	</div>
+);
 };
 
-{
-	/* <div className='card card-compact w-96 bg-base-100 shadow-xl'>
-	<figure>
-		<img
-			src='https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg'
-			alt='Shoes'
-		/>
-	</figure>
-	<div className='card-body'>
-		<h2 className='card-title'>Shoes!</h2>
-		<p>If a dog chews shoes whose shoes does he choose?</p>
-		<div className='card-actions justify-end'>
-			<button className='btn btn-primary'>Buy Now</button>
-		</div>
-	</div>
-</div>; */
-}
 
 
 export default Bestseller;
