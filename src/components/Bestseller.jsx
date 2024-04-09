@@ -16,7 +16,7 @@ const Bestseller = () => {
 			.getEntries({ content_type: 'product' })
 			.then((response) => {
 				setData(response.items);
-				// console.log(response.items);
+				console.log(response.items);
 			})
 			.catch(console.error);
 
