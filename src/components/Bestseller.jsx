@@ -2,7 +2,7 @@ import { createClient } from 'contentful';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// Ask Lillian how to put cards in flex
+
 
 const Bestseller = () => {
 	const [data, setData] = useState([]);
