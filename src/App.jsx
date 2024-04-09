@@ -6,11 +6,13 @@ import SingleProductPage from "./components/SingleProductPage";
 import ShopByCategory from "./components/ShopByCategory";
 import HeroSection from "./components/HeroSection";
 import AboutUs from "./components/AboutUs";
+import Motto from "./components/Motto";
+import Collection from "./components/Collection";
 
 function App() {
   return (
-		<>
-			<Header />
+    <>
+      <Header />
 
 			<Routes>
 				<Route
@@ -27,9 +29,9 @@ function App() {
 				<Route path='/bestseller/:id' element={<SingleProductPage />} />
 			</Routes>
 
-			<Footer />
-		</>
-	);
+      <Footer />
+    </>
+  );
 }
 
 export default App;
