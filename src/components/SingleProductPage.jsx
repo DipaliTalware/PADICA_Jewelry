@@ -28,7 +28,6 @@ const SingleProductPage = () => {
 			{singleProduct ? (
 				<div>
 					<p>This product is from bestseller: {id}</p>
-					{/* Render singleProduct details here */}
 				</div>
 			) : (
 				<p>Loading</p>
