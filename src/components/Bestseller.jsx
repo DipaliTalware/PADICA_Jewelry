@@ -1,33 +1,34 @@
-import { createClient } from "contentful";
-import React from "react";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-// Ask Lillian how to put cards in flex
+import { createClient } from 'contentful';
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Bestseller = () => {
-  const [data, setData] = useState([]);
+	const [data, setData] = useState([]);
 
-  const client = createClient({
-    space: import.meta.env.VITE_SPACE_ID,
-    accessToken: import.meta.env.VITE_ACCESS_TOKEN,
-  });
+	const client = createClient({
+		space: import.meta.env.VITE_SPACE_ID,
+		accessToken: import.meta.env.VITE_ACCESS_TOKEN,
+	});
 
-  const fetchData = () =>
-    client
-      .getEntries({ content_type: "product" })
-      .then((response) => {
-        setData(response.items);
-        // console.log(response.items);
-      })
-      .catch(console.error);
+	const fetchData = () =>
+		client
+			.getEntries({ content_type: 'product' })
+			.then((response) => {
+				setData(response.items);
+				// console.log(response.items);
+			})
+			.catch(console.error);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+	useEffect(() => {
+		fetchData();
+	}, []);
 
   return data ? (
-    <div className="pt-8 pb-8 ">
-      <h2 className="p-6 text-2xl ">Bestseller</h2>
+    <div>
+      <h2 className="p-6 text-2xl text-center">Bestseller</h2>
+      <div className="flex justify-center content-center pt-8 pb-8 ">
+      
       <div className="flex flex-row space-x-4 overflow-x-auto m-2  ">
         {data.map((eachData) => (
           <Link
@@ -52,6 +53,9 @@ const Bestseller = () => {
         ))}
       </div>
     </div>
+
+    </div>
+    
   ) : (
     <p>Loading...</p>
   );

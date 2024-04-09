@@ -8,19 +8,26 @@ import HeroSection from "./components/HeroSection";
 
 function App() {
   return (
-    <>
-      <Header />
-      <HeroSection />
-      {/* <Bestseller /> */}
-      <Routes>
-        <Route path="/" element={<Bestseller />} />
-        {/* <Route path="/" element={<ShopByCategory />} /> */}
-        <Route path="/bestseller/:id" element={<SingleProductPage />} />
-      </Routes>
-      <ShopByCategory />
-      <Footer />
-    </>
-  );
+		<>
+			<Header />
+
+			<Routes>
+				<Route
+					path=''
+					element={
+						<div>
+							<HeroSection />
+							<Bestseller />
+							<ShopByCategory />
+						</div>
+					}
+				/>
+				<Route path='/bestseller/:id' element={<SingleProductPage />} />
+			</Routes>
+
+			<Footer />
+		</>
+	);
 }
 
 export default App;

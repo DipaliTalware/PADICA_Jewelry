@@ -25,8 +25,10 @@ const ShopByCategory = () => {
   }, []);
 
   return data ? (
-    <div className="pt-8">
-      <h2 className="p-6 text-2xl">Shop by Category</h2>
+    <div>
+      <h2 className="p-6 text-2xl text-center">Shop by Category</h2>
+       <div className="flex justify-center content-center pt-8 pb-8 ">
+      
       <div className="flex flex-row space-x-4 overflow-x-auto m-2">
         {data.map((eachData) => (
           <Link
@@ -48,6 +50,9 @@ const ShopByCategory = () => {
         ))}
       </div>
     </div>
+
+    </div>
+   
   ) : (
     <p>Loading...</p>
   );
