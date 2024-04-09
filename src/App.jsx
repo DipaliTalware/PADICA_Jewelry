@@ -5,6 +5,7 @@ import Bestseller from "./components/Bestseller";
 import SingleProductPage from "./components/SingleProductPage";
 import ShopByCategory from "./components/ShopByCategory";
 import HeroSection from "./components/HeroSection";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
 							<HeroSection />
 							<Bestseller />
 							<ShopByCategory />
+							<AboutUs />
 						</div>
 					}
 				/>
