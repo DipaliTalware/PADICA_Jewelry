@@ -26,9 +26,9 @@ const Bestseller = () => {
   }, []);
 
   return data ? (
-    <div className="pt-8 pb-8">
-      <h2 className="p-6 text-2xl">Bestseller</h2>
-      <div className="flex flex-row space-x-4 overflow-x-auto m-2">
+    <div className="pt-8 pb-8 ">
+      <h2 className="p-6 text-2xl ">Bestseller</h2>
+      <div className="flex flex-row space-x-4 overflow-x-auto m-2  ">
         {data.map((eachData) => (
           <Link
             key={eachData.sys.id}
@@ -37,7 +37,7 @@ const Bestseller = () => {
           >
             <div>
               <img
-                className="h-30"
+                className="h-30 shadow-lg transition-transform duration-300 transform hover:scale-110 hover:rotate ease-in-out"
                 src={eachData.fields.heroImage.fields.file.url}
                 alt={eachData.fields.heroImage.fields.file.fileName}
               />

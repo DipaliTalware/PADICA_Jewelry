@@ -36,7 +36,7 @@ const ShopByCategory = () => {
           >
             <div>
               <img
-                className="h-30"
+                className="h-30  shadow-lg transition-all duration-500 transform hover:scale-105 hover:rotate hover:shadow-xl"
                 src={eachData.fields.image.fields.file.url}
                 alt={eachData.fields.image.fields.file.fileName}
               />
