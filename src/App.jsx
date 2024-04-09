@@ -5,11 +5,14 @@ import Bestseller from "./components/Bestseller";
 import SingleProductPage from "./components/SingleProductPage";
 import ShopByCategory from "./components/ShopByCategory";
 import HeroSection from "./components/HeroSection";
+import AboutUs from "./components/AboutUs";
+import Motto from "./components/Motto";
+import Collection from "./components/Collection";
 
 function App() {
   return (
-		<>
-			<Header />
+    <>
+      <Header />
 
 			<Routes>
 				<Route
@@ -19,15 +22,16 @@ function App() {
 							<HeroSection />
 							<Bestseller />
 							<ShopByCategory />
+							<AboutUs />
 						</div>
 					}
 				/>
 				<Route path='/bestseller/:id' element={<SingleProductPage />} />
 			</Routes>
 
-			<Footer />
-		</>
-	);
+      <Footer />
+    </>
+  );
 }
 
 export default App;
