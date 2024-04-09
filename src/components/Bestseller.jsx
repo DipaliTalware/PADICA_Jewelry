@@ -3,7 +3,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-
 const Bestseller = () => {
 	const [data, setData] = useState([]);
 
@@ -26,34 +25,35 @@ const Bestseller = () => {
 	}, []);
 
 	return data ? (
-		<div className='flex flex-row space-x-4 overflow-x-auto m-2'>
-			{data.map((eachData) => (
-				<Link
-					key={eachData.sys.id}
-					className='card card-compact w-96 bg-base-100 shadow-xl'
-					to={`/bestseller/${eachData.sys.id}`}
-				>
-					<div>
-						<img
-							className='h-30'
-							src={eachData.fields.heroImage.fields.file.url}
-							alt={eachData.fields.heroImage.fields.file.fileName}
-						/>
-						<div className='card-body'>
-							<h2 className='card-title'>{eachData.fields.name}</h2>
-							<h3>
-								{eachData.fields.price} {''}EUR
-							</h3>
+		<div className='pt-8 pb-8'>
+			<h2 className='p-6 text-2xl'>Bestseller</h2>
+			<div className='flex flex-row space-x-4 overflow-x-auto m-2'>
+				{data.map((eachData) => (
+					<Link
+						key={eachData.sys.id}
+						className='card card-compact w-96 bg-base-100 shadow-xl'
+						to={`/bestseller/${eachData.sys.id}`}
+					>
+						<div>
+							<img
+								className='h-30'
+								src={eachData.fields.heroImage.fields.file.url}
+								alt={eachData.fields.heroImage.fields.file.fileName}
+							/>
+							<div className='card-body'>
+								<h2 className='card-title'>{eachData.fields.name}</h2>
+								<h3>
+									{eachData.fields.price} {''}EUR
+								</h3>
+							</div>
 						</div>
-					</div>
-				</Link>
-			))}
+					</Link>
+				))}
+			</div>
 		</div>
 	) : (
 		<p>Loading...</p>
 	);
 };
-
-
 
 export default Bestseller;
