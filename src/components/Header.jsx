@@ -7,10 +7,9 @@ const Header = () => {
       <div>
         <li className="flex pl-5 text-xl pt-5 px-4 justify-around gap-5">
           {/* <img src={image} alt="logo" className="h-20" /> */}
-          <NavLink>Home</NavLink>
-          <NavLink>New</NavLink>
-          <NavLink>Shop</NavLink>
           <NavLink>Bestseller</NavLink>
+          <NavLink>Collections</NavLink>
+          <NavLink>Categories</NavLink>
           <NavLink>About Us</NavLink>
         </li>
       </div>

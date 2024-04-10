@@ -15,21 +15,23 @@ function App() {
     <>
       <Header />
 
-			<Routes>
-				<Route
-					path=''
-					element={
-						<div>
-							<HeroSection />
-							<Bestseller />
-							<ShopByCategory />
-							<AboutUs />
-							<ContactUs />
-						</div>
-					}
-				/>
-				<Route path='/bestseller/:id' element={<SingleProductPage />} />
-			</Routes>
+      <Routes>
+        <Route
+          path=""
+          element={
+            <div>
+              <HeroSection />
+              <Motto />
+              <Bestseller />
+              <Collection />
+              <ShopByCategory />
+              <AboutUs />
+              <ContactUs />
+            </div>
+          }
+        />
+        <Route path="/bestseller/:id" element={<SingleProductPage />} />
+      </Routes>
 
       <Footer />
     </>
