@@ -3,8 +3,12 @@ import collection from "../assets/collection.jpg";
 
 const Collection = () => {
   return (
-    <div className="flex">
-      <img src={collection} alt="collection" className="w-1/2" />
+    <div className="flex bg-white">
+      <img
+        src={collection}
+        alt="collection"
+        className="w-1/2 rounded-md pl-4"
+      />
       <div className="flex-col pt-28">
         <h2 className="font-bold mb-2 text-3xl pb-4 px-10">Bliss Collection</h2>
         <p className="px-10 text-lg">
