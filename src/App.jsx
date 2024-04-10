@@ -11,8 +11,8 @@ import Collection from "./components/Collection";
 
 function App() {
   return (
-    <>
-      <Header />
+		<>
+			<Header />
 
 			<Routes>
 				<Route
@@ -20,6 +20,7 @@ function App() {
 					element={
 						<div>
 							<HeroSection />
+							<Motto />
 							<Bestseller />
 							<ShopByCategory />
 							<AboutUs />
@@ -29,9 +30,9 @@ function App() {
 				<Route path='/bestseller/:id' element={<SingleProductPage />} />
 			</Routes>
 
-      <Footer />
-    </>
-  );
+			<Footer />
+		</>
+	);
 }
 
 export default App;
