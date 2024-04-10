@@ -8,6 +8,7 @@ import HeroSection from "./components/HeroSection";
 import AboutUs from "./components/AboutUs";
 import Motto from "./components/Motto";
 import Collection from "./components/Collection";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
 							<Bestseller />
 							<ShopByCategory />
 							<AboutUs />
+							<ContactUs />
 						</div>
 					}
 				/>

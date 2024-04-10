@@ -1,8 +1,35 @@
 import { NavLink } from "react-router-dom";
+import image from "../assets/image.webp";
 
 function Footer() {
   return (
+	<>
+	<div className="px-8 pt-8 text-xl mr-14 flex bg-gray-100">
+        PADICA <img src={image} alt="logo" className="h-20 block" /> JEWELRY
+      </div>
+	 <div class="flex justify-center gap-14 pt-8 pb-8 bg-gray-100">
+    <div class="flex flex-col">
+	<ul class="space-y-4 ">
+      <li><NavLink activeClassName="font-bold">Home</NavLink></li>
+      <li><NavLink  activeClassName="font-bold">About us</NavLink></li>
+      <li><NavLink activeClassName="font-bold">New</NavLink></li>
+      <li><NavLink  activeClassName="font-bold">Shop</NavLink></li>
+      <li><NavLink activeClassName="font-bold">Bestseller</NavLink></li>
+      
+    </ul>
+    </div>
+    <div class="flex flex-col bg-gray-100">
+      <ul class="space-y-4  ">
+        <li><NavLink activeClassName="font-bold">Privacy Policy</NavLink></li>
+        <li><NavLink  activeClassName="font-bold">Terms of Service</NavLink></li>
+        <li><NavLink  activeClassName="font-bold">FAQ</NavLink></li>
+		<li><NavLink activeClassName="font-bold">Return Policy</NavLink></li>
+        <li><NavLink  activeClassName="font-bold">Sitemap</NavLink></li>
+      </ul>
+    </div>
+  </div>
 		<div className='flex justify-center  bg-gray-100 pb-5'>
+		
 			<div className='flex pt-5 mr-5 p-2 gap-5 '>
 				<NavLink>
 					<svg
@@ -60,6 +87,8 @@ function Footer() {
 				</NavLink>
 			</div>
 		</div>
+		</>
+
 	);
 }
 
