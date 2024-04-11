@@ -8,29 +8,28 @@ import HeroSection from './components/HeroSection';
 import AboutUs from './components/AboutUs';
 import Motto from './components/Motto';
 import Collection from './components/Collection';
-// import ContactUs from './components/ContactUs';
+
 
 function App() {
 	return (
 		<>
 			<Header />
-			
 
 			<Routes>
 				<Route
-					path=''
+					path='/'
 					element={
 						<div>
 							<HeroSection />
 							<Motto />
-							<Bestseller />
-							<Collection />
-							<ShopByCategory />
-							<AboutUs />
-							{/* <ContactUs /> */}
+							<Bestseller path='/bestseller' />
+							<Collection path='/collections' />
+							<ShopByCategory path='categories' />
+							<AboutUs path='/about' />
 						</div>
 					}
 				/>
+
 				<Route path='/bestseller/:id' element={<SingleProductPage />} />
 			</Routes>
 

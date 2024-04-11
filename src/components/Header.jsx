@@ -41,22 +41,24 @@ const Header = () => {
 					}  md:flex pl-5 text-xl pt-5 px-4 justify-around gap-5`}
 				>
 					<li>
-						<NavLink>Bestseller</NavLink>
+						<NavLink to='/bestseller'>Bestseller</NavLink>
 					</li>
 					<li>
-						<NavLink>Collections</NavLink>
+						<NavLink to='/collections'>Collections</NavLink>
 					</li>
 					<li>
-						<NavLink>Categories</NavLink>
+						<NavLink to='/categories'>Categories</NavLink>
 					</li>
 					<li>
-						<NavLink>About Us</NavLink>
+						<NavLink to='/about'>About Us</NavLink>
 					</li>
 				</ul>
 			</div>
-			<div className='px-4 pt-5 text-xl mr-10 flex'>
+
+			<NavLink to='/' className='px-4 pt-5 text-xl mr-10 flex'>
 				PADICA <img src={image} alt='logo' className='h-10' /> JEWELRY
-			</div>
+			</NavLink>
+
 			<div className='flex pt-5 mr-5 p-2 '>
 				<NavLink className='pr-5'>
 					<svg
