@@ -3,7 +3,7 @@ import collection from "../assets/collection.jpg";
 
 const Collection = () => {
   return (
-    <div className="flex bg-white">
+    <div id="collections" className="flex bg-white">
       <img
         src={collection}
         alt="collection"

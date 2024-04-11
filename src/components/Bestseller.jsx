@@ -25,7 +25,7 @@ const Bestseller = () => {
   }, []);
 
   return data ? (
-    <div>
+    <div id="bestseller">
       <h2 className="pt-14 text-3xl text-center">Bestseller</h2>
       <div className="flex justify-center content-center pt-4 pb-14 ">
         <div className="flex flex-row space-x-4 overflow-x-auto m-2  ">
@@ -35,7 +35,7 @@ const Bestseller = () => {
               className="card card-compact w-96 bg-base-100 shadow-xl"
               to={`/bestseller/${eachData.sys.id}`}
             >
-              <div>
+              <div className="overflow-hidden">
                 <img
                   className="h-30 shadow-lg transition-transform duration-300 transform hover:scale-110 hover:rotate ease-in-out"
                   src={eachData.fields.heroImage.fields.file.url}

@@ -25,7 +25,7 @@ const ShopByCategory = () => {
   }, []);
 
   return data ? (
-    <div className="pb-10">
+    <div id="categories" className="pb-10">
       <h2 className="pt-14 text-3xl text-center">Shop by Category</h2>
       <div className="flex justify-center content-center pt-8 pb-8 ">
         <div className="flex flex-row space-x-4 overflow-x-auto m-2">
@@ -35,9 +35,9 @@ const ShopByCategory = () => {
               className="card card-compact w-96 bg-base-100 shadow-xl"
               to={`/category/${eachData.sys.id}`}
             >
-              <div className="">
+              <div className="overflow-hidden">
                 <img
-                  className="h-30 shadow-lg transition-all duration-500 transform hover:scale-105 hover:rotate hover:shadow-xl"
+                  className="h-30 shadow-lg transition-all duration-500  hover:rotate transform hover:shadow-xl hover:scale-105"
                   src={eachData.fields.image.fields.file.url}
                   alt={eachData.fields.image.fields.file.fileName}
                 />

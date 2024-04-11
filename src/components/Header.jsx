@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import image from "../assets/image.webp";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Header = () => {
   return (
@@ -7,15 +8,15 @@ const Header = () => {
       <div>
         <li className="flex pl-5 text-xl pt-5 px-4 justify-around gap-5">
           {/* <img src={image} alt="logo" className="h-20" /> */}
-          <NavLink>Bestseller</NavLink>
-          <NavLink>Collections</NavLink>
-          <NavLink>Categories</NavLink>
-          <NavLink>About Us</NavLink>
+          <AnchorLink href="#bestseller">Bestseller</AnchorLink>
+          <AnchorLink href="#collections">Collections</AnchorLink>
+          <AnchorLink href="#categories">Categories</AnchorLink>
+          <AnchorLink href="#about">About Us</AnchorLink>
         </li>
       </div>
-      <div className="px-4 pt-5 text-xl mr-10 flex">
+      <NavLink className="px-4 pt-5 text-xl mr-10 flex">
         PADICA <img src={image} alt="logo" className="h-10" /> JEWELRY
-      </div>
+      </NavLink>
       <div className="flex pt-5 mr-5 p-2 ">
         <NavLink className="pr-5">
           <svg
