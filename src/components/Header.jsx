@@ -1,17 +1,58 @@
-import { NavLink } from "react-router-dom";
-import image from "../assets/image.webp";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import image from '../assets/image.webp';
 
 const Header = () => {
-  return (
-		<div className='flex justify-between  bg-gray-100 pb-5'>
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const toggleMenu = () => {
+		setIsMenuOpen(!isMenuOpen);
+	};
+
+	return (
+		<div className='flex justify-between bg-gray-100 pb-5'>
 			<div>
-				<li className='flex pl-5 text-xl pt-5 px-4 justify-around gap-5'>
-					{/* <img src={image} alt="logo" className="h-20" /> */}
-					<NavLink>Bestseller</NavLink>
-					<NavLink>Collections</NavLink>
-					<NavLink>Categories</NavLink>
-					<NavLink>About Us</NavLink>
-				</li>
+				<button
+					className='block md:hidden px-2 py-1 mr-4 mt-3'
+					onClick={toggleMenu}
+				>
+					<svg
+						className='h-6 w-6 fill-current text-gray-900'
+						viewBox='0 0 24 24'
+					>
+						{isMenuOpen ? (
+							<path
+								fillRule='evenodd'
+								clipRule='evenodd'
+								d='M19 12H5a1 1 0 0 1 0-2h14a1 1 0 0 1 0 2zm0-7H5a1 1 0 0 1 0-2h14a1 1 0 0 1 0 2zm0 14H5a1 1 0 0 1 0-2h14a1 1 0 0 1 0 2z'
+							/>
+						) : (
+							<path
+								fillRule='evenodd'
+								clipRule='evenodd'
+								d='M4 6H20V8H4V6ZM4 11H20V13H4V11ZM20 18H4V16H20V18Z'
+							/>
+						)}
+					</svg>
+				</button>
+				<ul
+					className={`${
+						isMenuOpen ? 'block' : 'hidden'
+					}  md:flex pl-5 text-xl pt-5 px-4 justify-around gap-5`}
+				>
+					<li>
+						<NavLink>Bestseller</NavLink>
+					</li>
+					<li>
+						<NavLink>Collections</NavLink>
+					</li>
+					<li>
+						<NavLink>Categories</NavLink>
+					</li>
+					<li>
+						<NavLink>About Us</NavLink>
+					</li>
+				</ul>
 			</div>
 			<div className='px-4 pt-5 text-xl mr-10 flex'>
 				PADICA <img src={image} alt='logo' className='h-10' /> JEWELRY
@@ -19,7 +60,7 @@ const Header = () => {
 			<div className='flex pt-5 mr-5 p-2 '>
 				<NavLink className='pr-5'>
 					<svg
-						className='LOGIN-icon h-6'
+						className='h-6'
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 448 512'
 					>
@@ -28,7 +69,7 @@ const Header = () => {
 				</NavLink>
 				<NavLink>
 					<svg
-						className='SEARCH-icon h-6 pr-5'
+						className='h-6 pr-5'
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 512 512'
 					>
@@ -37,7 +78,7 @@ const Header = () => {
 				</NavLink>
 				<NavLink>
 					<svg
-						className='CART-icon h-6 pr-5'
+						className='h-6 pr-5'
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 576 512'
 					>
