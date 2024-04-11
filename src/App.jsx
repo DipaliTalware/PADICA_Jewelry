@@ -9,11 +9,12 @@ import AboutUs from './components/AboutUs';
 import Motto from './components/Motto';
 import Collection from './components/Collection';
 import ContactUs from './components/ContactUs';
-
+// import CartUpdate from './components/CartUpdate';
 function App() {
 	return (
 		<>
 			<Header />
+			{/* <CartUpdate /> */}
 
 			<Routes>
 				<Route

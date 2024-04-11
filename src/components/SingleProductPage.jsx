@@ -1,6 +1,7 @@
 import { createClient } from 'contentful';
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import CartUpdate from './CartUpdate';
 const SingleProductPage = () => {
 	const { id } = useParams();
 
@@ -8,6 +9,8 @@ const SingleProductPage = () => {
 	const [singleImage, setSingleImage] = useState([]);
 	const [selected, setSelected] = useState(0);
 	const [selectedImageURL, setSelectedImageURL] = useState();
+	const [buttonText, setButtonText] = useState('Add To Cart');
+	const [showPopUp, setShowPopUp] = useState(false);
 
 	const client = createClient({
 		space: import.meta.env.VITE_SPACE_ID,
@@ -35,6 +38,14 @@ const SingleProductPage = () => {
 	function toggleBorder(index, URL) {
 		setSelected(index);
 		setSelectedImageURL(URL);
+	}
+
+	function buttonClicked() {
+		setButtonText('add more');
+		setShowPopUp(true);
+	}
+	function closePopUp() {
+		setShowPopUp(false);
 	}
 	return (
 		<div>
@@ -90,9 +101,19 @@ const SingleProductPage = () => {
 								<p>In stock - delivery in 2-3 working days</p>
 							</span>
 
-							<button className='block w-full mt-6 px-14 py-3 bg-black text-white border-2 rounded-md text-lg font-semibold hover:bg-white hover:text-black transition duration-300 ease-in-out'>
-								Add to Cart
+							<button
+								onClick={() => buttonClicked()}
+								className={`block w-full mt-6 px-14 py-3 bg-black text-white border-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out ${
+									showPopUp
+										? 'pointer-events-none'
+										: ' hover:bg-white hover:text-black '
+								}`}
+							>
+								{buttonText}
 							</button>
+							{showPopUp && (
+								<CartUpdate closeEvent={closePopUp} image={selectedImageURL} />
+							)}
 							<br />
 							<span className='text-balance'>{singleProduct.description}</span>
 						</div>
