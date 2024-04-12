@@ -50,7 +50,7 @@ const Header = () => {
 				</ul>
 			</div>
 
-			<NavLink to='/' className='px-4 pt-5 text-xl mr-16 flex'>
+			<NavLink to='' className='px-4 pt-5 text-xl mr-16 flex'>
 				PADICA <img src={image} alt='logo' className='h-10' /> JEWELRY
 			</NavLink>
 
