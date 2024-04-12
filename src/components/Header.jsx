@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import image from '../assets/image.webp';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import AnchorLink from 'react-anchor-link-smooth-scroll'; 
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
