@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import image from '../assets/image.webp';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,26 +41,20 @@ const Header = () => {
 						isMenuOpen ? 'block' : 'hidden'
 					}  md:flex pl-5 text-xl pt-5 px-4 justify-around gap-5`}
 				>
-					<li>
-						<NavLink to='/bestseller'>Bestseller</NavLink>
-					</li>
-					<li>
-						<NavLink to='/collections'>Collections</NavLink>
-					</li>
-					<li>
-						<NavLink to='/categories'>Categories</NavLink>
-					</li>
-					<li>
-						<NavLink to='/about'>About Us</NavLink>
+					<li className='flex  text-xl px-2 gap-5'>
+						<AnchorLink href='#bestseller'>Bestseller</AnchorLink>
+						<AnchorLink href='#collections'>Collections</AnchorLink>
+						<AnchorLink href='#categories'>Categories</AnchorLink>
+						<AnchorLink href='#about'>About Us</AnchorLink>
 					</li>
 				</ul>
 			</div>
 
-			<NavLink to='/' className='px-4 pt-5 text-xl mr-10 flex'>
+			<NavLink to='/' className='px-4 pt-5 text-xl mr-16 flex'>
 				PADICA <img src={image} alt='logo' className='h-10' /> JEWELRY
 			</NavLink>
 
-			<div className='flex pt-5 mr-5 p-2 '>
+			<div className='flex pt-5 mr-5 p-2 mt-2'>
 				<NavLink className='pr-5'>
 					<svg
 						className='h-6'

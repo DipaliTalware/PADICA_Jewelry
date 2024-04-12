@@ -8,7 +8,7 @@ import HeroSection from './components/HeroSection';
 import AboutUs from './components/AboutUs';
 import Motto from './components/Motto';
 import Collection from './components/Collection';
-
+import Error404 from './components/Error404';
 
 function App() {
 	return (
@@ -22,15 +22,16 @@ function App() {
 						<div>
 							<HeroSection />
 							<Motto />
-							<Bestseller path='/bestseller' />
-							<Collection path='/collections' />
-							<ShopByCategory path='categories' />
-							<AboutUs path='/about' />
+							<Bestseller />
+							<Collection />
+							<ShopByCategory />
+							<AboutUs />
 						</div>
 					}
 				/>
 
 				<Route path='/bestseller/:id' element={<SingleProductPage />} />
+				<Route path='*' element={<Error404 />} />
 			</Routes>
 
 			<Footer />

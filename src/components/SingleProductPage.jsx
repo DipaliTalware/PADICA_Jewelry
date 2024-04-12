@@ -50,7 +50,7 @@ const SingleProductPage = () => {
 	return (
 		<div>
 			{singleProduct ? (
-				<div className='wrapper'>
+				<div className='wrapper py-14'>
 					<div className=' flex m-10 '>
 						<div>
 							{singleImage ? (

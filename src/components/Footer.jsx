@@ -4,7 +4,7 @@ import image from "../assets/image.webp";
 function Footer() {
   return (
 		<>
-			<div class='flex justify-center gap-14 pt-8 pb-8 bg-gray-100'>
+			<div class='justify-center gap-14 pt-8 pb-8 bg-gray-100 hidden sm:flex'>
 				<div class='flex flex-col'>
 					<ul class='space-y-4 '>
 						<li>
@@ -158,24 +158,6 @@ function Footer() {
 						<svg
 							className='h-6'
 							xmlns='http://www.w3.org/2000/svg'
-							viewBox='0 0 576 512'
-						>
-							<path d='M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z' />
-						</svg>
-					</NavLink>
-					<NavLink>
-						<svg
-							className='h-6'
-							xmlns='http://www.w3.org/2000/svg'
-							viewBox='0 0 448 512'
-						>
-							<path d='M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z' />
-						</svg>
-					</NavLink>
-					<NavLink>
-						<svg
-							className='h-6'
-							xmlns='http://www.w3.org/2000/svg'
 							viewBox='0 0 448 512'
 						>
 							<path d='M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z' />
@@ -183,11 +165,8 @@ function Footer() {
 					</NavLink>
 				</div>
 			</div>
-			<div className='flex justify-center pb-6'>
-				<p>
-					Copyright © 2024 PADICA JEWELRY. All rights reserved. PADICA is
-					registered and trademarks of PADICA AG.
-				</p>
+			<div className='flex justify-center pb-6 bg-gray-100 px-5'>
+				<p>Copyright © 2024 PADICA JEWELRY. All rights reserved.</p>
 			</div>
 		</>
 	);
